@@ -267,3 +267,9 @@ input[type=text]:placeholder {
   margin-top: 1em;
   height: 3em;
 }
+.borderAlert{
+  border-color: red !important;
+}
+.logInAlert {
+  color: red;
+}

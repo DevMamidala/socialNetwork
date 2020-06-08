@@ -14,13 +14,13 @@
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="First Name" formControlName= "first_name" [ngClass]= "{'borderAlert': signupForm.controls.first_name.status === 'INVALID' && isClicked}" class="form-control" autofocus>
+                        <input type="text" id="firstName" placeholder="First Name" formControlName= "firstName" [ngClass]= "{'borderAlert': signupForm.controls.firstName.status === 'INVALID' && isClicked}" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="lastName" class="col-sm-3 control-label">Last Name</label>
                     <div class="col-sm-9">
-                        <input type="text" id="lastName" placeholder="Last Name" formControlName =" last_name" class="form-control" [ngClass]="{'borderAlert': signupForm.controls.last_name.status === 'INVALID' &&  isClicked }" autofocus>
+                        <input type="text" id="lastName" placeholder="Last Name" formControlName ="lastName" class="form-control" [ngClass]="{'borderAlert': signupForm.controls.lastName.status === 'INVALID' &&  isClicked }" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,15 +45,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
-                    <div class="col-sm-9">
-                        <input type="date" id="birthDate" class="form-control" [ngClass]="{'borderAlert': signupForm.controls.birthDate.status === 'INVALID' && isClicked}" formControlName="mem_name">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
                     <div class="col-sm-9">
-                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control" formControlName="contactnum"[ngClass]= "{'borderAlert': signupForm.controls.birthDate.status === 'INVALID' && isClicked }">
+                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control" formControlName="phone" [ngClass]= "{'borderAlert': signupForm.controls.phone.status === 'INVALID' && isClicked }">
                         <span class="help-block" >Your phone number won't be disclosed anywhere </span>
                     </div>
                 </div>
@@ -75,6 +69,7 @@
                         </div>
                     </div>
                 </div> <!-- /.form-group -->
+                <p class="resCheck" id="resCheckValidate" >{{respMessage}}</p>
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>

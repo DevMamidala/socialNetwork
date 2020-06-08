@@ -11,12 +11,14 @@
     <div class="fadeIn first"> User LogIn    </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form [formGroup]= "logIn">
+      <input type="text" id="email" class="fadeIn second" name="login" formControlName="email" placeholder="login" [ngClass]="{'borderAlert': logIn.controls.email.status ==='INVALID' && islogClick }">
+      <input type="text" id="password" class="fadeIn third" name="login" [ngClass]= "{'borderAlert': logIn.controls.password.status ==='INVALID' && islogClick}" formControlName="password" placeholder="password">
+
+      <p *ngIf="islogClick && logIn.controls.email && logIn.controls.password " class="logInAlert" >Please enter a Valid email & Password </p>
       
     </form>
-    <button type="button" class="btn btn-primary login_container" routerLink="/login" value="Log In"> Log In</button>
+    <button type="button" class="btn btn-primary login_container" routerLink="/login" value="Log In" (click)="onClickLogIn()"> Log In</button>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
@@ -25,6 +27,6 @@
 					</div>
       <a class="d-flex justify-content-center links" href="#" routerLink="/forgotpassword">Forgot Password?</a>
     </div>
-
+   
   </div>
 </div>
